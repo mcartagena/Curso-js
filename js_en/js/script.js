@@ -1,5 +1,4 @@
 /*
  *  Curso basico de javascript
- *
+ * 
  */
-
