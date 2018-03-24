@@ -28,6 +28,8 @@ window.onload = function(){
     var info = document.getElementById("info"); 
     var i = 0;
 
+    var isEverythingOK = true;
+
     //numberField.onkeydown = function(e){
     // numberField.onkeydown = function(e){  // mismo efecto que el anterior
     /* numberField.onkeyup = function(e){ 
@@ -52,10 +54,17 @@ window.onload = function(){
         if(!isNumber(String.fromCharCode(e.which)) && e.which !== 8 || e.which === 32){
             info.innerHTML = "Please, type a number";
             this.style.backgroundColor = "red";
+            isEverythingOK = false;
             e.preventDefault();
         } else {
             info.innerHTML = "";
             this.style.backgroundColor = "green";
+            isEverythingOK = true;
         }        
+    };
+
+    submitMyFormButton.onclick = function(e){
+        if(!isEverythingOK)
+            e.preventDefault();
     };
 };
